@@ -7,7 +7,7 @@
 
 body {
   font-family: 'Poppins', Arial, sans-serif;
-  background: linear-gradient(135deg, #9c894c, #fcd525);
+  background: linear-gradient(135deg, #8b5e3c, #c4a484); /* chestnut to tan */
   min-height: 100vh;
   display: flex;
   justify-content: center;
@@ -16,17 +16,81 @@ body {
 
 /* App container */
 .app-container {
-  background: #fff;
+  background: #fffaf3; /* soft cream */
   padding: 25px;
   border-radius: 16px;
   width: 90%;
   max-width: 420px;
-  box-shadow: 0 6px 14px rgba(0,0,0,0.25);
+  box-shadow: 0 6px 14px rgba(92, 64, 51, 0.25); /* warm brown shadow */
   transition: transform 0.3s ease;
 }
 
 .app-container:hover {
   transform: scale(1.02);
+}
+/* Header styling */
+.app-header {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #5c4033; /* deep brown */
+}
+
+.app-header h1 {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Notepad icon stays plain */
+.app-header .icon {
+  font-size: 28px;
+  color: inherit; /* keep default emoji look */
+}
+
+/* Gradient only on text */
+.app-header .title-text {
+  background: linear-gradient(135deg, #8b5e3c, #c4a484); /* chestnut to tan */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Tagline */
+.app-header .tagline {
+  font-size: 14px;
+  font-style: italic;
+  color: #7b5e57; /* soft brown */
+  margin-bottom: 10px;
+}
+
+/* Divider line */
+.header-divider {
+  border: none;
+  height: 2px;
+  width: 60%;
+  margin: 0 auto;
+  background: linear-gradient(to right, #8b5e3c, #c4a484);
+  border-radius: 2px;
+}
+
+/* Fade-in animation */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s ease forwards;
+}
+
+.fade-in:nth-child(1) { animation-delay: 0.2s; }
+.fade-in:nth-child(2) { animation-delay: 0.4s; }
+.fade-in:nth-child(3) { animation-delay: 0.6s; }
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Input section */
@@ -39,14 +103,14 @@ body {
 #task-input {
   flex: 1;
   padding: 12px;
-  border: 2px solid #2575fc;
+  border: 2px solid #a0522d; /* sienna */
   border-radius: 8px;
   font-size: 15px;
 }
 
 #add-task-btn {
   padding: 12px 18px;
-  background: #2575fc;
+  background: linear-gradient(135deg, #8b5e3c, #a0522d); /* chestnut to sienna */
   color: white;
   border: none;
   border-radius: 8px;
@@ -55,7 +119,7 @@ body {
 }
 
 #add-task-btn:hover {
-  background: #6a11cb;
+  background: #6d4c41; /* medium brown */
   transform: translateY(-2px);
 }
 
@@ -65,7 +129,7 @@ body {
 }
 
 #task-list li {
-  background: #f9f9f9;
+  background: #f4e1d2; /* light beige */
   padding: 12px;
   margin-bottom: 12px;
   border-radius: 8px;
@@ -76,13 +140,13 @@ body {
 }
 
 #task-list li:hover {
-  background: #f1f1f1;
+  background: #e6ccb2; /* warm tan */
 }
 
 .delete-btn {
   background: transparent;
   border: none;
-  color: red;
+  color: #8b0000; /* dark red */
   font-size: 18px;
   cursor: pointer;
   transition: transform 0.2s ease;
@@ -95,7 +159,7 @@ body {
 /* Completed tasks */
 .completed {
   text-decoration: line-through;
-  color: gray;
+  color: #6d4c41; /* medium brown */
   opacity: 0.7;
   transition: color 0.3s ease, opacity 0.3s ease;
 }
@@ -116,10 +180,12 @@ body {
     padding: 10px;
   }
 }
+
+/* Clear All button */
 #clear-tasks-btn {
   margin-top: 15px;
   padding: 10px 15px;
-  background: #ff4d4d;
+  background: #a0522d; /* sienna */
   color: white;
   border: none;
   border-radius: 8px;
@@ -129,16 +195,18 @@ body {
 }
 
 #clear-tasks-btn:hover {
-  background: #cc0000;
+  background: #8b4513; /* saddle brown */
 }
+
+/* Footer */
 .site-footer {
   margin-top: 20px;
   padding: 15px;
-  background: linear-gradient(135deg, #2575fc, #6a11cb);
+  background: linear-gradient(135deg, #a0522d, #8b5e3c); /* sienna to chestnut */
   color: white;
   text-align: center;
   border-radius: 0 0 12px 12px;
-  box-shadow: 0 -2px 6px rgba(0,0,0,0.15);
+  box-shadow: 0 -2px 6px rgba(92, 64, 51, 0.25);
 }
 
 .site-footer .footer-content p {
@@ -152,7 +220,7 @@ body {
 }
 
 .site-footer .heart {
-  color: #fcd525;
+  color: #fcd5b5; /* soft peach */
   animation: pulse 1.5s infinite;
 }
 
