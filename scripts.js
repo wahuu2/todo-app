@@ -101,3 +101,13 @@ taskList.addEventListener("click", function(event) {
     saveTasks();
   }
 });
+// Clear all tasks
+function clearTasks() {
+  taskList.innerHTML = ""; // remove all tasks from UI
+  localStorage.removeItem("tasks"); // clear localStorage
+}
+
+// Event listener for Clear All button
+const clearTasksBtn = document.querySelector("#clear-tasks-btn");
+clearTasksBtn.addEventListener("click", clearTasks);
+

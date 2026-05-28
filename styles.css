@@ -116,3 +116,18 @@ body {
     padding: 10px;
   }
 }
+#clear-tasks-btn {
+  margin-top: 15px;
+  padding: 10px 15px;
+  background: #ff4d4d;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  width: 100%;
+}
+
+#clear-tasks-btn:hover {
+  background: #cc0000;
+}
