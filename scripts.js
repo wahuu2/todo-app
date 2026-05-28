@@ -3,7 +3,8 @@ const taskInput = document.querySelector("#task-input");
 const addTaskBtn = document.querySelector("#add-task-btn");
 const taskList = document.querySelector("#task-list");
 
-addTaskBtn.addEventListener("click", function() {
+// Function to create a new task
+function addTask() {
   const taskText = taskInput.value.trim();
 
   if (taskText !== "") {
@@ -25,20 +26,17 @@ addTaskBtn.addEventListener("click", function() {
     // Clear input field
     taskInput.value = "";
   }
-});
+}
 
-taskList.addEventListener("click", function(event) {
-  if (event.target.classList.contains("delete-btn")) {
-    event.target.parentElement.remove();
-  }
-});
+// Event listener for Add Task button
+addTaskBtn.addEventListener("click", addTask);
 
+// Event delegation for task list
 taskList.addEventListener("click", function(event) {
   // Delete button functionality
   if (event.target.classList.contains("delete-btn")) {
     event.target.parentElement.remove();
   }
-
   // Toggle completed task
   else if (event.target.tagName === "LI") {
     event.target.classList.toggle("completed");
