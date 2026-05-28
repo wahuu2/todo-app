@@ -32,3 +32,15 @@ taskList.addEventListener("click", function(event) {
     event.target.parentElement.remove();
   }
 });
+
+taskList.addEventListener("click", function(event) {
+  // Delete button functionality
+  if (event.target.classList.contains("delete-btn")) {
+    event.target.parentElement.remove();
+  }
+
+  // Toggle completed task
+  else if (event.target.tagName === "LI") {
+    event.target.classList.toggle("completed");
+  }
+});
