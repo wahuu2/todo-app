@@ -31,6 +31,13 @@ function addTask() {
 // Event listener for Add Task button
 addTaskBtn.addEventListener("click", addTask);
 
+// Event listener for Enter key
+taskInput.addEventListener("keypress", function(event) {
+  if (event.key === "Enter") {
+    addTask();
+  }
+});
+
 // Event delegation for task list
 taskList.addEventListener("click", function(event) {
   // Delete button functionality
